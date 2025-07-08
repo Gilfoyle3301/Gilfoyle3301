@@ -47,8 +47,8 @@ Through **neural polymers**, **biointerfaces**, and **artificial cognition**, we
 
 ## 📈 GitHub Metrics
 
-![Evgenij's GitHub stats](https://github-readme-stats.vercel.app/api?username=evgenijrazumovsky&show_icons=true&theme=radical)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=evgenijrazumovsky&layout=compact&theme=radical)
+![Evgenij's GitHub stats](https://github-readme-stats.vercel.app/api?username=Gilfoyle3301&show_icons=true&theme=radical)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Gilfoyle3301&layout=compact&theme=radical)
 
 ---
 
