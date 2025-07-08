@@ -1,0 +1,32 @@
+# .github/workflows/update-quote.yml
+name: 🧠 Update Daily Quote
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # каждый день в 6 утра UTC
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Pull random quote
+        run: |
+          QUOTE=$(curl -s https://api.quotable.io/random | jq -r '.content + " — " + .author')
+          echo "QUOTE=$QUOTE" >> $GITHUB_ENV
+
+      - name: Replace quote
+        run: |
+          sed -i '/<!-- START:QUOTE -->/,/<!-- END:QUOTE -->/c\
+          <!-- START:QUOTE -->\
+          > '"$QUOTE"'\
+          <!-- END:QUOTE -->' README.md
+
+      - name: Commit and push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "🔄 updated daily quote"
+          git push
